@@ -5,7 +5,7 @@ const App = () => {
     <div>
       <Slider  
       link={'https://picsum.photos/v2/list'} page={"1"}
-      limit={"10"}/>
+      limit={"20"}/>
       
     </div>
   )
