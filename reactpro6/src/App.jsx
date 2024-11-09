@@ -19,7 +19,7 @@ const handleButton = ()=>{
       <input type="text" placeholder="Enter the qr code you wanted" name='qr-code' value={input} 
       onChange={(e)=>setInput(e.target.value)}
       />
-      <button onClick={handleButton}>Submit</button>
+      <button onClick={handleButton}>SubmiT</button>
 
       <QRCode value={genrate} size={400} bgColor="#fff" id="qr-codee" />
 
