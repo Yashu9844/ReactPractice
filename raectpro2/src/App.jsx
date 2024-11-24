@@ -56,7 +56,7 @@ const createRandomColor = ()=>{}
       
        
       }}>
-        <button onClick={()=>setType('hex')} >Change to HEx A color</button>
+        <button onClick={()=>setType('hex')} >Change to HEx A </button>
         <button onClick={()=>setType('rgb')} >Change to RGB</button>
         <button onClick={
          type === 'rgb' ? (handleChangeToRGB):(handleChangeToHex)
