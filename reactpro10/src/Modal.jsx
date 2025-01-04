@@ -1,6 +1,10 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { closeModal } from './store/modal.js'
 
-const Modal = ({open,setOpen}) => {
+const Modal = ({open}) => {
+const dispatch = useDispatch()
+
   return (
     <div className="">
         
@@ -13,7 +17,7 @@ const Modal = ({open,setOpen}) => {
             <h1 className="text-3xl text-center">Welcome to the Bored</h1>
             <p className="text-center">This is the bored</p>
             <button
-              onClick={() => setOpen(!open) }
+              onClick={() => dispatch(closeModal()) }
               className="bg-red-500 p-3 rounded text-white"
             >
               Close the bored
