@@ -36,7 +36,7 @@ const handleApi =async ()=>{
         <button type='submit' onClick={handleSubmit} className='bg-blue-500 p-2 ml-2 rounded text-white'>Submit</button>
       </div>
     
-      <div className=" h-[70%]  flex justify-center items-center">
+      <div className=" h-[90%]  flex justify-center items-center">
         <GitModal user={username ? username : "Yashu9844"} data ={data}/>
       </div>
 
