@@ -2,18 +2,32 @@ import { Button } from '@headlessui/react'
 import React from 'react'
 import { useState } from 'react'
 import GitModal from './GitModal'
+import { useEffect } from 'react'
 
 const App = () => {
     
   const [text, setText] = React.useState('')
 console.log(text)
-const [username , setUserName]= useState('')
-
+const [username , setUserName]= useState('Yashu9844')
+const [data , setData] = useState(null)
 const handleSubmit = (e) => {
   e.preventDefault()
   setUserName(text)
   setText('')
 }
+
+ useEffect(()=>{
+
+const handleApi =async ()=>{
+  const res =  await fetch(`https://api.github.com/users/${username}`);
+
+  const data = await res.json();
+ 
+  setData(data)
+}
+ handleApi()
+ },[username])
+
 
   return (
     <div className='h-screen  bg-gray-200 w-full'>
@@ -22,8 +36,8 @@ const handleSubmit = (e) => {
         <button type='submit' onClick={handleSubmit} className='bg-blue-500 p-2 ml-2 rounded text-white'>Submit</button>
       </div>
     
-      <div className=" h-[70%] bg-red-500 flex justify-center items-center">
-        <GitModal user={username ? username : "Yashu9844"}/>
+      <div className=" h-[70%]  flex justify-center items-center">
+        <GitModal user={username ? username : "Yashu9844"} data ={data}/>
       </div>
 
       
